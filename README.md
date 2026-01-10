@@ -26,6 +26,8 @@ graph TB
     style Static fill:#f8d7da,stroke:#721c24
 ```
 
+Note: open https://mermaid.live/ to view the diagram
+
 ## Components
 
 ### Nginx

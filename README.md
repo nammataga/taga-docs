@@ -1,4 +1,4 @@
-taga-admin='ssh admin-taga@taga-prod'
+taga-admin='ssh admin-taga@taga-prod' </br>
 taga-cloudflare='firefox -P "ravi" https://dash.cloudflare.com &'
 taga-dev='ssh dev@taga-prod'
 taga-domain='firefox -P "ravi" https://www.godaddy.com &'

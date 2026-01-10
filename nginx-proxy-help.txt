@@ -1,0 +1,23 @@
+# 🌐 Nginx Reverse Proxy Configuration
+
+Domains configured:
+- nammataga.com → static files at /var/www/nammataga.com (listen 80)
+- dev.nammataga.com → proxy to localhost:1701
+- tst.nammataga.com → proxy to localhost:1702
+- stg.nammataga.com → proxy to localhost:1703
+- devapi.nammataga.com → proxy to localhost:1801
+- tstapi.nammataga.com → proxy to localhost:1802
+- stgapi.nammataga.com → proxy to localhost:1803
+- api.nammataga.com → proxy to localhost:8080
+
+Nginx config files:
+- /etc/nginx/sites-available/<domain>
+- Enabled via symlink in /etc/nginx/sites-enabled/
+
+Reload nginx after changes:
+  sudo nginx -t && sudo systemctl reload nginx
+
+Cloudflare SSL:
+- Currently serving HTTP only
+- Cloudflare provides SSL termination
+- For Full (Strict) mode, add Origin certs under /etc/nginx/ssl/<domain>

@@ -1,0 +1,29 @@
+@startuml
+title TAGA Member Registration – Process Flow
+
+|Aspiring Member|
+start
+:Learn about TAGA membership;
+:Visit local TAGA organization;
+:Submit required documents;
+
+|Local TAGA Organization|
+:Receive member request;
+:Verify agricultural qualification;
+if (Eligible?) then (Yes)
+  :Confirm eligibility;
+else (No)
+  stop
+endif
+
+|TAGA System|
+:Upload new member registration;
+:Create registration request;
+:Store member details;
+
+|TAGA Administration|
+:Review registration request;
+:Approve member;
+:Activate membership;
+stop
+@enduml

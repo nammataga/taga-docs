@@ -1,29 +1,38 @@
 @startuml
-title TAGA Member Registration – Process Flow
+title TAGA New Member Registration – Process Flow
 
-|Aspiring Member|
 start
-:Learn about TAGA membership;
-:Visit local TAGA organization;
-:Submit required documents;
+:Upload new member registration request file;
+note right
+Uploaded by TAGA Admin Role
+File must follow a predefined format
+end note
 
-|Local TAGA Organization|
-:Receive member request;
-:Verify agricultural qualification;
-if (Eligible?) then (Yes)
-  :Confirm eligibility;
-else (No)
+:Create registration request;
+if (Registration error?) then (Yes)
+  :Send error email to TAGA Admin;
+  note right
+Email includes:
+- Precise error details
+- Fields to be corrected
+  end note
   stop
+else (No)
+  :Store member details;
 endif
 
-|TAGA System|
-:Upload new member registration;
-:Create registration request;
-:Store member details;
+:Send registration success email to member;
+note right
+Email includes:
+- Initial temporary password
+end note
 
-|TAGA Administration|
-:Review registration request;
-:Approve member;
-:Activate membership;
+:Member first login;
+:Force password change;
+note right
+User must change password on first login
+Temporary password becomes invalid
+end note
+
 stop
 @enduml
